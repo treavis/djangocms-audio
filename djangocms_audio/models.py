@@ -75,7 +75,7 @@ class AudioFile(CMSPlugin):
     """
     audio_file = FilerFileField(
         verbose_name=_('File'),
-        blank=False,
+        blank=True,
         null=True,
         on_delete=models.SET_NULL,
         related_name='+',
