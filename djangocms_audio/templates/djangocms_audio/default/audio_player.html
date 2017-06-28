@@ -1,6 +1,6 @@
 {% load i18n cms_tags %}
 
-<div class="audio-track">
+<div class="audio-tracks">
   {% for plugin in instance.child_plugin_instances %}
       {% render_plugin plugin %}
   {% empty %}
