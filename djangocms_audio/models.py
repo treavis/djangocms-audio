@@ -83,6 +83,18 @@ class AudioFile(CMSPlugin):
         blank=True,
         max_length=255,
     )
+    text_year = models.TextField(
+        verbose_name=_('Year'),
+        blank=True,
+    )
+    text_length = models.TextField(
+        verbose_name=_('Length'),
+        blank=True,
+    )
+    text_instrumentation = models.TextField(
+        verbose_name=_('Instrumentation'),
+        blank=True,
+    )
     text_description = models.TextField(
         verbose_name=_('Description'),
         blank=True,

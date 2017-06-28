@@ -51,12 +51,15 @@ class AudioFilePlugin(CMSPluginBase):
             'fields': (
                 'audio_file',
                 'text_title',
+                'text_year',
+                'text_length',
+                'text_instrumentation',
+                'text_description',
             )
         }),
         (_('Advanced settings'), {
             'classes': ('collapse',),
             'fields': (
-                'text_description',
                 'attributes',
             )
         })
