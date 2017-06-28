@@ -1,10 +1,12 @@
 {% load i18n cms_tags %}
 
-{% for plugin in instance.child_plugin_instances %}
-    {% render_plugin plugin %}
-{% empty %}
-    {% trans "No audio file available." %}
-{% endfor %}
+<div class="audio-track">
+  {% for plugin in instance.child_plugin_instances %}
+      {% render_plugin plugin %}
+  {% empty %}
+      {% trans "No audio file available." %}
+  {% endfor %}
+</div>
 
 {% comment %}
     # Available variables:
