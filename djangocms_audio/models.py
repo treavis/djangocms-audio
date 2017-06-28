@@ -125,7 +125,7 @@ class AudioFile(CMSPlugin):
     def get_short_description(self):
         if self.text_title:
             return self.text_title
-        else self.audio_file_id and self.audio_file.label:
+        elif self.audio_file_id and self.audio_file.label:
             return self.audio_file.label
         return ugettext('<file is missing>')
 
