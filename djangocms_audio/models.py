@@ -12,6 +12,8 @@ from django.core.exceptions import ValidationError
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext, ugettext_lazy as _
 
+from djangocms_text_ckeditor.fields import HTMLField
+
 from cms.models import CMSPlugin
 
 from djangocms_attributes_field.fields import AttributesField
@@ -83,19 +85,22 @@ class AudioFile(CMSPlugin):
         blank=True,
         max_length=255,
     )
-    text_year = models.TextField(
+    text_year = models.CharField(
         verbose_name=_('Year'),
         blank=True,
+        max_length=255,
     )
-    text_length = models.TextField(
+    text_length = models.CharField(
         verbose_name=_('Length'),
         blank=True,
+        max_length=255,
     )
-    text_instrumentation = models.TextField(
+    text_instrumentation = models.CharField(
         verbose_name=_('Instrumentation'),
         blank=True,
+        max_length=255,
     )
-    text_description = models.TextField(
+    text_description = HTMLField(
         verbose_name=_('Description'),
         blank=True,
     )
