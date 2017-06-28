@@ -7,14 +7,16 @@
     <p class="instrumentation">{{ instance.text_instrumentation }}</p>
     {{ instance.text_description|safe }}
     <div class="play-button"></div>
-    <audio controls
-        {% if instance.text_title %} title="{{ instance.text_title }}"{% endif %}
-        {% if instance.attributes %} {{ instance.attributes_str }}{% endif %}>
-        <source src="{{ instance.audio_file.url }}" type="audio/{% if ext == "mp3" %}mpeg{% else %}{{ ext }}{% endif %}">
-        {% for plugin in instance.child_plugin_instances %}
-            {% render_plugin plugin %}
-        {% endfor %}
-    </audio>
+    {% if instance.audio_file.url %}
+      <audio controls
+          {% if instance.text_title %} title="{{ instance.text_title }}"{% endif %}
+          {% if instance.attributes %} {{ instance.attributes_str }}{% endif %}>
+          <source src="{{ instance.audio_file.url }}" type="audio/{% if ext == "mp3" %}mpeg{% else %}{{ ext }}{% endif %}">
+          {% for plugin in instance.child_plugin_instances %}
+              {% render_plugin plugin %}
+          {% endfor %}
+      </audio>
+    {% endif %}
   </div>
 {% endwith %}
 
