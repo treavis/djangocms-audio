@@ -6,8 +6,8 @@
     <h2>{{ instance.text_title }}<span class="year">{{ instance.text_year }}</span><span class="length">{{ instance.text_length }}</span></h2>
     <p class="instrumentation">{{ instance.text_instrumentation }}</p>
     {{ instance.text_description|safe }}
-    <div class="play-button"></div>
     {% if instance.audio_file.url %}
+    <div class="play-button"></div>
       <audio controls
           {% if instance.text_title %} title="{{ instance.text_title }}"{% endif %}
           {% if instance.attributes %} {{ instance.attributes_str }}{% endif %}>
