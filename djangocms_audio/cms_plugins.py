@@ -11,7 +11,7 @@ class AudioPlayerPlugin(CMSPluginBase):
     model = models.AudioPlayer
     name = _('Audio player')
     allow_children = True
-    child_classes = ['AudioFilePlugin', 'AudioFolderPlugin']
+    child_classes = ['AudioFilePlugin', 'AudioFolderPlugin','AliasPlugin']
 
     fieldsets = [
         (None, {
